@@ -13,11 +13,28 @@
         body {
             font-family: sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
+            margin: 0; /* Ensure no default body margin */
+            padding: 0; /* Ensure no default body padding */
             color: #333;
         }
-        header, footer {
+
+        /* Styles for the new Logo Banner */
+        #logo-banner {
+            width: 100%; /* Span full width */
+            background-color: #ffffff; /* White background - change as needed */
+            padding: 15px 0; /* Vertical padding */
+            text-align: center; /* Center the logo image */
+            border-bottom: 1px solid #eee; /* Optional separator line */
+            box-sizing: border-box; /* Include padding/border in width calculation */
+        }
+        #logo-banner img {
+            max-width: 220px; /* Adjust max logo width as needed */
+            height: auto; /* Maintain aspect ratio */
+            vertical-align: middle; /* Good practice for image alignment */
+        }
+
+        /* Original Header (Name & Nav) */
+        header {
             background-color: #0044cc; /* Example blue color */
             color: white;
             padding: 1em 2em;
@@ -110,29 +127,29 @@
             background-color: #003399;
         }
 
-        /* Styles for the new Gallery Section */
+        /* Styles for the Gallery Section */
         .gallery-container {
-            display: flex; /* Use Flexbox for layout */
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            gap: 1em; /* Space between images */
-            justify-content: center; /* Center items if space allows */
-            padding-top: 1em; /* Add some space below the paragraph */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+            padding-top: 1em;
         }
         .gallery-container figure {
-            margin: 0; /* Remove default figure margin */
-            border: 1px solid #ddd; /* Optional border */
+            margin: 0;
+            border: 1px solid #ddd;
             padding: 0.5em;
-            background-color: #f9f9f9; /* Light background */
+            background-color: #f9f9f9;
             text-align: center;
-            flex: 1 1 250px; /* Flex properties: grow, shrink, basis (min-width) */
-            max-width: 300px; /* Max width per item */
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+            flex: 1 1 250px;
+            max-width: 300px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
         }
         .gallery-container img {
-            max-width: 100%; /* Make images responsive within their container */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Remove extra space below image */
-            margin-bottom: 0.5em; /* Space between image and caption */
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 0.5em;
         }
         .gallery-container figcaption {
             font-size: 0.9em;
@@ -143,11 +160,28 @@
         footer {
             text-align: center;
             margin-top: 2em;
+            padding: 1em 2em; /* Add padding to footer */
+            background-color: #333; /* Darker footer background */
+            color: #ccc; /* Lighter text for footer */
             font-size: 0.9em;
         }
+        footer p {
+            margin: 0.5em 0; /* Space out footer paragraphs */
+        }
+        footer a { /* Style footer links if any */
+             color: #fff;
+             text-decoration: underline;
+        }
+        footer a:hover {
+             text-decoration: none;
+        }
+
 
         /* Basic responsiveness */
         @media (max-width: 600px) {
+            #logo-banner img {
+                max-width: 180px; /* Slightly smaller logo on mobile */
+            }
             header h1 {
                 font-size: 2em;
             }
@@ -159,8 +193,8 @@
                 padding: 1em;
             }
             .gallery-container figure {
-                 flex-basis: 100%; /* Stack images vertically on small screens */
-                 max-width: 90%; /* Adjust max-width for smaller screens */
+                 flex-basis: 100%;
+                 max-width: 90%;
             }
         }
     </style>
@@ -168,6 +202,9 @@
 </head>
 <body>
 
+    <div id="logo-banner">
+        <img src="https://raw.githubusercontent.com/brandonjyoung/brandonjyoung.github.io/refs/heads/main/logo.jpg" alt="Young Plumbing Co. Logo">
+    </div>
     <header>
         <h1>Young Plumbing Co.</h1>
         <nav>
@@ -175,7 +212,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#gallery">Gallery</a></li> <li><a href="#contact">Contact</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -207,17 +245,18 @@
 
         <section id="about">
             <h2>About Young Plumbing Co.</h2>
-            <p>Young Plumbing Co. is a locally owned and operated business proudly serving the Lafayette, California community and surrounding areas. Founded on principles of honesty, integrity, and quality workmanship, we strive to provide the best plumbing service experience possible.</p>
+            <p>Young Plumbing Co. is a locally owned and operated business proudly serving the Lafayette, California community and surrounding areas since [Start Year - e.g., 2010]. Founded on principles of honesty, integrity, and quality workmanship, we strive to provide the best plumbing service experience possible.</p>
             <p>Our team consists of licensed, insured, and experienced plumbers who are dedicated to solving your plumbing problems quickly and effectively. We use high-quality parts and stand behind our work.</p>
             <p><strong>Why Choose Us?</strong></p>
             <ul>
                 <li>Locally Owned & Operated in Lafayette, CA</li>
-                <li>Licensed & Insured Professionals</li>
+                <li>Licensed & Insured Professionals (License #: [Your License Number])</li>
                 <li>Upfront & Honest Pricing</li>
                 <li>24/7 Emergency Service Available</li>
                 <li>Commitment to Customer Satisfaction</li>
+                <li>Serving Lafayette since [Start Year]</li>
             </ul>
-        </section>
+             </section>
 
         <section id="gallery">
             <h2>Project Gallery</h2>
@@ -249,6 +288,7 @@
                 </figure>
                 </div>
         </section>
+
         <section id="contact">
             <h2>Get In Touch</h2>
             <p>Ready to schedule a service, request an estimate, or have a question? Contact Young Plumbing Co. today!</p>
@@ -258,6 +298,7 @@
                 <li><strong>Email:</strong> <a href="mailto:service@youngplumbing.co">service@youngplumbing.co</a> <em>(Replace with actual email)</em></li>
                 <li><strong>Service Area:</strong> Lafayette, Walnut Creek, Moraga, Orinda, and surrounding Contra Costa County areas. <em>(Adjust as needed)</em></li>
                 <li><strong>Hours:</strong> Monday - Friday: 8:00 AM - 5:00 PM | 24/7 Emergency Service Available</li>
+                 <li><strong>License #:</strong> [Your License Number] <em>(Add your license number)</em></li>
             </ul>
 
             <h3>Send Us a Message</h3>
@@ -291,8 +332,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Young Plumbing Co. All Rights Reserved.</p>
-        <p>Serving Lafayette, CA and Neighboring Communities</p>
+        <p>&copy; 2025 Young Plumbing Co. | License #: [Your License Number] | All Rights Reserved.</p> <p>Serving Lafayette, CA and Neighboring Communities</p>
         </footer>
 
     </body>
