@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Young Plumbing Co. offers reliable residential and commercial plumbing services in Lafayette, CA, including repairs, installations, drain cleaning, and emergency services.">
-    <meta name="keywords" content="plumbing, plumber, Lafayette CA, emergency plumber, drain cleaning, water heater repair, pipe repair, Young Plumbing Co">
+    <meta name="description" content="Young Plumbing Co. offers reliable residential and commercial plumbing services in Lafayette, CA, including repairs, installations, drain cleaning, and emergency services. View our project gallery.">
+    <meta name="keywords" content="plumbing, plumber, Lafayette CA, emergency plumber, drain cleaning, water heater repair, pipe repair, plumbing gallery, Young Plumbing Co">
 
     <title>Young Plumbing Co. - Your Trusted Local Plumbers</title>
 
@@ -51,6 +51,9 @@
             margin-bottom: 2em;
             padding-bottom: 1em;
             border-bottom: 1px solid #eee;
+        }
+        section:last-of-type { /* Remove border from last section before footer */
+            border-bottom: none;
         }
         section h2 {
             color: #0044cc; /* Match header color */
@@ -106,11 +109,43 @@
         form button:hover {
             background-color: #003399;
         }
+
+        /* Styles for the new Gallery Section */
+        .gallery-container {
+            display: flex; /* Use Flexbox for layout */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 1em; /* Space between images */
+            justify-content: center; /* Center items if space allows */
+            padding-top: 1em; /* Add some space below the paragraph */
+        }
+        .gallery-container figure {
+            margin: 0; /* Remove default figure margin */
+            border: 1px solid #ddd; /* Optional border */
+            padding: 0.5em;
+            background-color: #f9f9f9; /* Light background */
+            text-align: center;
+            flex: 1 1 250px; /* Flex properties: grow, shrink, basis (min-width) */
+            max-width: 300px; /* Max width per item */
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+        .gallery-container img {
+            max-width: 100%; /* Make images responsive within their container */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below image */
+            margin-bottom: 0.5em; /* Space between image and caption */
+        }
+        .gallery-container figcaption {
+            font-size: 0.9em;
+            color: #555;
+            font-style: italic;
+        }
+
         footer {
             text-align: center;
             margin-top: 2em;
             font-size: 0.9em;
         }
+
         /* Basic responsiveness */
         @media (max-width: 600px) {
             header h1 {
@@ -122,6 +157,10 @@
             }
             main {
                 padding: 1em;
+            }
+            .gallery-container figure {
+                 flex-basis: 100%; /* Stack images vertically on small screens */
+                 max-width: 90%; /* Adjust max-width for smaller screens */
             }
         }
     </style>
@@ -136,7 +175,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#gallery">Gallery</a></li> <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -160,4 +199,101 @@
                 <li><strong>Water Heater Services:</strong> Installation, repair, and maintenance for tankless and traditional water heaters.</li>
                 <li><strong>Fixture Installation & Repair:</strong> Faucets, sinks, toilets, showerheads, garbage disposals, and more.</li>
                 <li><strong>Pipe Repair & Repiping:</strong> Addressing corroded, broken, or old pipes.</li>
-                <li><strong>Sewer Line Services:</strong> Inspection, cleaning, repair, and replacement.
+                <li><strong>Sewer Line Services:</strong> Inspection, cleaning, repair, and replacement.</li>
+                <li><strong>Gas Line Services:</strong> Installation and repair (ensure certified if offering).</li>
+                <li><strong>Commercial Plumbing:</strong> Tailored services for businesses and commercial properties.</li>
+            </ul>
+        </section>
+
+        <section id="about">
+            <h2>About Young Plumbing Co.</h2>
+            <p>Young Plumbing Co. is a locally owned and operated business proudly serving the Lafayette, California community and surrounding areas. Founded on principles of honesty, integrity, and quality workmanship, we strive to provide the best plumbing service experience possible.</p>
+            <p>Our team consists of licensed, insured, and experienced plumbers who are dedicated to solving your plumbing problems quickly and effectively. We use high-quality parts and stand behind our work.</p>
+            <p><strong>Why Choose Us?</strong></p>
+            <ul>
+                <li>Locally Owned & Operated in Lafayette, CA</li>
+                <li>Licensed & Insured Professionals</li>
+                <li>Upfront & Honest Pricing</li>
+                <li>24/7 Emergency Service Available</li>
+                <li>Commitment to Customer Satisfaction</li>
+            </ul>
+        </section>
+
+        <section id="gallery">
+            <h2>Project Gallery</h2>
+            <p>Take a look at some of the quality work performed by Young Plumbing Co.</p>
+            <div class="gallery-container">
+                <figure>
+                    <img src="images/plumbing-project-1.jpg" alt="Clean installation of a new tankless water heater">
+                    <figcaption>Tankless Water Heater Installation</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/plumbing-project-2.jpg" alt="Copper pipe repair under house crawl space">
+                    <figcaption>Copper Pipe Repair</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/plumbing-project-3.jpg" alt="Hydro jetting equipment cleaning main sewer line">
+                    <figcaption>Hydro Jetting - Main Line</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/plumbing-project-4.jpg" alt="Installation of a modern bathroom sink and faucet">
+                    <figcaption>Bathroom Fixture Upgrade</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/plumbing-project-5.jpg" alt="Plumber diagnosing leak under kitchen sink">
+                    <figcaption>Leak Detection Service</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/plumbing-project-6.jpg" alt="Commercial plumbing setup for a restaurant">
+                    <figcaption>Commercial Kitchen Plumbing</figcaption>
+                </figure>
+                </div>
+        </section>
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Ready to schedule a service, request an estimate, or have a question? Contact Young Plumbing Co. today!</p>
+
+            <ul>
+                <li><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a> <em>(Replace with actual number)</em></li>
+                <li><strong>Email:</strong> <a href="mailto:service@youngplumbing.co">service@youngplumbing.co</a> <em>(Replace with actual email)</em></li>
+                <li><strong>Service Area:</strong> Lafayette, Walnut Creek, Moraga, Orinda, and surrounding Contra Costa County areas. <em>(Adjust as needed)</em></li>
+                <li><strong>Hours:</strong> Monday - Friday: 8:00 AM - 5:00 PM | 24/7 Emergency Service Available</li>
+            </ul>
+
+            <h3>Send Us a Message</h3>
+            <form action="#" method="POST" id="contact-form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="customer_name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="customer_email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone (Optional):</label>
+                    <input type="tel" id="phone" name="customer_phone">
+                </div>
+                <div>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div>
+                    <label for="message">How can we help?</label>
+                    <textarea id="message" name="customer_message" rows="6" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Young Plumbing Co. All Rights Reserved.</p>
+        <p>Serving Lafayette, CA and Neighboring Communities</p>
+        </footer>
+
+    </body>
+</html>
